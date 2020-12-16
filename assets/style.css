@@ -1,0 +1,5 @@
+/* Sets everything to border-box */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
