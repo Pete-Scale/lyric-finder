@@ -1,5 +1,5 @@
 // QR Code API -----------------------------------------------------------------
-var qrQueryURL = 'http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size100x100';
+var qrQueryURL = 'http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100';
 
 var qrImg = $('#qr-img');
 

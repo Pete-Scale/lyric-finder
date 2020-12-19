@@ -186,13 +186,23 @@ form{
   text-transform: uppercase;
 }
 
+body{
+    background-color: #000;
+}
 
-  
+.card-design{
+    background-color: #000;
+}
+
+.img-design{
+    display: block;
+    margin: 0 auto;
+}
   
   /* qr code */
   #qr-img {
-      max-width: 80px;
-      max-height: 80px;
+      max-width: 150px;
+      max-height: 150px;
       padding-right: 20px;
       margin-left: 20px;
   }
