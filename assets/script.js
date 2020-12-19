@@ -15,6 +15,12 @@ var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi"
 
 var searchQueryURL = "https://api.happi.dev/v1/music" + apiKey + "&q=tom%20petty%20learning%20to%20fly"
 
+$('#search-btn').on('click', function(event){
+  event.preventDefault();
+  var searchInput = $('#search-input').val()
+  console.log(searchInput);
+})
+
 // Initial call needs artist and song title
 $.ajax({
   url: searchQueryURL,
