@@ -11,66 +11,35 @@ $.ajax({
 });
 
 // Lyrics API ------------------------------------------------------------------
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "81f33c93d1msh18f129aeea6daf6p1d6e01jsn52fbbee56faf",
-		"x-rapidapi-host": "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
-	}
-};
+var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi"
 
-// Reference: https://gist.github.com/chinchang/8106a82c56ad007e27b1 
-function xmlToJson(xml) {
-    // Create the return object
-    var obj = {};
-  
-    if (xml.nodeType == 1) {
-      // element
-      // do attributes
-      if (xml.attributes.length > 0) {
-        obj["@attributes"] = {};
-        for (var j = 0; j < xml.attributes.length; j++) {
-          var attribute = xml.attributes.item(j);
-          obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
-        }
-      }
-    } else if (xml.nodeType == 3) {
-      // text
-      obj = xml.nodeValue;
-    }
-  
-    // do children
-    // If all text nodes inside, get concatenated text from them.
-    var textNodes = [].slice.call(xml.childNodes).filter(function(node) {
-        return node.nodeType === 3;
-    });
-    if (xml.hasChildNodes() && xml.childNodes.length === textNodes.length) {
-      obj = [].slice.call(xml.childNodes).reduce(function(text, node) {
-          return text + node.nodeValue;
-        }, "");
-    } else if (xml.hasChildNodes()) {
-        for (var i = 0; i < xml.childNodes.length; i++) {
-            var item = xml.childNodes.item(i);
-        var nodeName = item.nodeName;
-        if (typeof obj[nodeName] == "undefined") {
-            obj[nodeName] = xmlToJson(item);
-        } else {
-            if (typeof obj[nodeName].push == "undefined") {
-            var old = obj[nodeName];
-            obj[nodeName] = [];
-            obj[nodeName].push(old);
-          }
-          obj[nodeName].push(xmlToJson(item));
-        }
-    }
-    }
-    return obj;
-  }
+var searchQueryURL = "https://api.happi.dev/v1/music" + apiKey + "&q=tom%20petty%20learning%20to%20fly"
 
-  $.ajax(settings).done(function (response) {
-    console.log(xmlToJson(response));
-    $('#lyrics-text').text(xmlToJson(response).GetLyricResult.Lyric)
+// Initial call needs artist and song title
+$.ajax({
+  url: searchQueryURL,
+  method: "GET"
+}).then(function(response){
+  // Returns only songs that hasLyrics
+  var lyrics = response.result.filter(function(song){
+    return song.haslyrics 
+  });
+  console.log(lyrics);
+  // Second api call for lyrics
+  var lyricQueryURL = lyrics[0].api_lyrics
+  $.ajax({
+    url: lyricQueryURL + apiKey,
+    method: "GET"
+  }).then(function(response){
+    console.log(response)
+    $('#lyrics-text').text(response.result.lyrics.split('\n'));
+    console.log(response.result);
+    console.log(response.result.lyrics.split('\n'));
+  });
+}).catch(function(error){
+  console.error(error)
 });
+
+// var lyricQueryURL = "https://api.happi.dev/v1/music/artists/24661/albums/734148/tracks/13207101/lyrics?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi"
+
+
