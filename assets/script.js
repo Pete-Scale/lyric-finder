@@ -32,9 +32,15 @@ $.ajax({
     method: "GET"
   }).then(function(response){
     console.log(response)
-    $('#lyrics-text').text(response.result.lyrics.split('\n'));
     console.log(response.result);
+    var lyricArray = response.result.lyrics.split('\n');
+
     console.log(response.result.lyrics.split('\n'));
+
+    for (var i = 0; i < lyricArray.length; i++){
+      var newPtag = $('<p>').text(lyricArray[i]) 
+      $('#lyrics-text').append(newPtag);
+    }
   });
 }).catch(function(error){
   console.error(error)
