@@ -3,3 +3,205 @@
     box-sizing: border-box;
 }
 
+/* CSS Styling for header & Nav Tabs */
+.subnav-hero-section {
+    text-align: center;
+    background: #1779ba;
+    background-size: cover;
+    position: relative;
+    overflow: visible;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 300px;
+  }
+  
+  .subnav-hero-section .subnav-hero-headline {
+    color: #fefefe;
+  }
+  
+  .subnav-hero-subnav {
+    float: none;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .subnav-hero-subnav li {
+    float: none;
+    display: inline-block;
+  }
+  
+  .subnav-hero-subnav li a {
+    padding: 0.9rem 1rem;
+    font-size: 0.75rem;
+    color: #fefefe;
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.35s ease-in-out;
+  }
+  
+  .subnav-hero-subnav li a.is-active {
+    background: rgba(254, 254, 254, 0.15);
+  }
+  
+  .subnav-hero-subnav li a:hover {
+    background: rgba(254, 254, 254, 0.15);
+  }
+  
+  /* css for search lyrics */
+
+.lyric-search {
+  background: #fefefe;
+  height: 200px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+}
+
+.lyric-search .input-group-field {
+  border-radius: 5000px 0 0 5000px;
+  position: relative;
+  -webkit-transform: translateX(0.5rem);
+      -ms-transform: translateX(0.5rem);
+          transform: translateX(0.5rem);
+}
+
+.lyric-search .input-group {
+  margin-bottom: 0;
+}
+
+.lyric-search .lyric-search-inner {
+  text-align: center;
+}
+
+.lyric-search .input-group-button .button {
+  border-radius: 5000px;
+  position: relative;
+  -webkit-transform: translateX(-0.5rem);
+      -ms-transform: translateX(-0.5rem);
+          transform: translateX(-0.5rem);
+  min-width: 25vw;
+}
+
+@media print, screen and (min-width: 40em) {
+  .newsletter-subscribe {
+    padding: 0 3rem;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  .newsletter-subscribe {
+    padding: 0 6rem;
+  }
+}
+form{
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+/*   card for lyrics and QR code */
+
+.card-article-hover {
+  box-shadow: 0px 0px 7px #888888;
+}
+
+.card-article-hover .card-section {
+  width: 90%;
+  background: #fefefe;
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-left: 25px;
+  margin-top: -3rem;
+  z-index: 2;
+}
+
+.card-article-hover .card-section .article-subtext {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+.card-article-hover .card-section .article-title {
+  font-weight: bold;
+  font-family: ‘Georgia’, serif;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.card-article-hover .card-section .article-desc {
+  font-family: ‘Georgia, serif;
+  font-size: 1rem;
+}
+
+.card-article-hover .card-divider {
+  background: #fff;
+}
+
+.card-article-hover .card-divider .author {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #2daebf;
+}
+
+.card-article-hover .hover-border {
+  height: 10px;
+  width: 6000px;
+  background: #2daebf;
+  width: auto;
+  transition: width 1s ease;
+}
+
+.card-article-hover:hover .hover-border {
+  height: 10px;
+  width: 450px;
+  transition: width 1s ease;
+}
+
+.card-article-hover .artist {
+  color: navy;
+}
+
+.card-article-hover .artist {
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+
+.card-article-hover .meta-data {
+  text-transform: uppercase;
+}
+
+body{
+    background-color: #000;
+}
+
+.card-design{
+    background-color: #000;
+}
+
+.img-design{
+    display: block;
+    margin: 0 auto;
+}
+  
+  /* qr code */
+  #qr-img {
+      max-width: 150px;
+      max-height: 150px;
+      padding-right: 20px;
+      margin-left: 20px;
+  }
