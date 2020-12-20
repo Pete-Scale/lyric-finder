@@ -15,11 +15,17 @@ var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi"
 
 var searchQueryURL = "https://api.happi.dev/v1/music" + apiKey + "&q="
 
+// When search button is clicked...
 $('#search-btn').on('click', function(event){
   event.preventDefault();
+  // Empty lyric div container
+  $('#lyrics-text').empty();
+
+  // Initial call needs artist and song title
   var searchInput = $('#search-input').val()
   console.log(searchQueryURL + searchInput);
-  // Initial call needs artist and song title
+
+  // First call
   $.ajax({
     url: searchQueryURL + searchInput,
     method: "GET"
@@ -29,7 +35,8 @@ $('#search-btn').on('click', function(event){
       return song.haslyrics 
     });
     console.log(lyrics);
-    // Second api call for lyrics
+
+    // Second api call for lyrics from only hasLyrics songs
     var lyricQueryURL = lyrics[0].api_lyrics
     $.ajax({
       url: lyricQueryURL + apiKey,
@@ -37,10 +44,11 @@ $('#search-btn').on('click', function(event){
     }).then(function(response){
       console.log(response)
       console.log(response.result);
+      // Split lyrics into an array to format correctly at ↵
       var lyricArray = response.result.lyrics.split('\n');
   
       console.log(response.result.lyrics.split('\n'));
-  
+      // Loop through lyric array and create new ptag for each line
       for (var i = 0; i < lyricArray.length; i++){
         var newPtag = $('<p>').text(lyricArray[i]) 
         $('#lyrics-text').append(newPtag);
@@ -51,7 +59,5 @@ $('#search-btn').on('click', function(event){
   });
 })
 
-
-// var lyricQueryURL = "https://api.happi.dev/v1/music/artists/24661/albums/734148/tracks/13207101/lyrics?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi"
 
 
