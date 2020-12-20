@@ -23,7 +23,7 @@ $('#search-btn').on('click', function(event){
 
   // Initial call needs artist and song title
   var searchInput = $('#search-input').val()
-  console.log(searchQueryURL + searchInput);
+  // console.log(searchQueryURL + searchInput);
 
   // First call
   $.ajax({
@@ -34,7 +34,7 @@ $('#search-btn').on('click', function(event){
     var lyrics = response.result.filter(function(song){
       return song.haslyrics 
     });
-    console.log(lyrics);
+    // console.log(lyrics);
 
     // Second api call for lyrics from only hasLyrics songs
     var lyricQueryURL = lyrics[0].api_lyrics
@@ -42,8 +42,11 @@ $('#search-btn').on('click', function(event){
       url: lyricQueryURL + apiKey,
       method: "GET"
     }).then(function(response){
-      console.log(response)
+      // console.log(response)
       console.log(response.result);
+      var artist = $('<h4>').text(response.result.artist)
+      var track = $('<h5>').text(response.result.track)
+      $('#lyrics-text').append(artist, track)
       // Split lyrics into an array to format correctly at ↵
       var lyricArray = response.result.lyrics.split('\n');
   
