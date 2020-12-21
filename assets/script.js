@@ -1,76 +1,65 @@
-// QR Code API -----------------------------------------------------------------
-var qrQueryURL = 'http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100';
+// When search button is clicked...
+$('#search-btn').on('click', function(event){
+  event.preventDefault();
+  // Empty lyric div container
+  $('#lyrics-text').empty();
+  
+  // Initial lyric call and QR Code API needs artist and song title 
+  var searchInput = $('#search-input').val();
+  // console.log(searchQueryURL + searchInput);
+  console.log(searchInput);
 
-var qrImg = $('#qr-img');
+  // QR Code API -----------------------------------------------------------------
+  var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
 
-$.ajax({
-    url: qrQueryURL,
+  var qrImg = $('#qr-img');
+
+  var youTubeSearch = 'https://www.youtube.com/results?search_query=';
+
+  qrImg.attr('src', qrURL + youTubeSearch + searchInput);
+
+  // Lyrics API ------------------------------------------------------------------
+  var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi";
+
+  var searchQueryURL = "https://api.happi.dev/v1/music" + apiKey + "&q=";
+  
+  // First call
+  $.ajax({
+    url: searchQueryURL + searchInput,
     method: "GET"
-}).then(function(response) {
-    qrImg.attr('src', 'https://api.qrserver.com/v1/create-qr-code/?data=https://github.com/Pete-Scale&amp;size=100x100');
-});
-
-// Lyrics API ------------------------------------------------------------------
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://sridurgayadav-chart-lyrics-v1.p.rapidapi.com/apiv1.asmx/SearchLyricDirect?artist=michael%20jackson&song=bad",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "81f33c93d1msh18f129aeea6daf6p1d6e01jsn52fbbee56faf",
-		"x-rapidapi-host": "sridurgayadav-chart-lyrics-v1.p.rapidapi.com"
-	}
-};
-
-// Reference: https://gist.github.com/chinchang/8106a82c56ad007e27b1 
-function xmlToJson(xml) {
-    // Create the return object
-    var obj = {};
-  
-    if (xml.nodeType == 1) {
-      // element
-      // do attributes
-      if (xml.attributes.length > 0) {
-        obj["@attributes"] = {};
-        for (var j = 0; j < xml.attributes.length; j++) {
-          var attribute = xml.attributes.item(j);
-          obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
-        }
-      }
-    } else if (xml.nodeType == 3) {
-      // text
-      obj = xml.nodeValue;
-    }
-  
-    // do children
-    // If all text nodes inside, get concatenated text from them.
-    var textNodes = [].slice.call(xml.childNodes).filter(function(node) {
-        return node.nodeType === 3;
+  }).then(function(response){
+    // Returns only songs that hasLyrics
+    var lyrics = response.result.filter(function(song){
+      return song.haslyrics
     });
-    if (xml.hasChildNodes() && xml.childNodes.length === textNodes.length) {
-      obj = [].slice.call(xml.childNodes).reduce(function(text, node) {
-          return text + node.nodeValue;
-        }, "");
-    } else if (xml.hasChildNodes()) {
-        for (var i = 0; i < xml.childNodes.length; i++) {
-            var item = xml.childNodes.item(i);
-        var nodeName = item.nodeName;
-        if (typeof obj[nodeName] == "undefined") {
-            obj[nodeName] = xmlToJson(item);
-        } else {
-            if (typeof obj[nodeName].push == "undefined") {
-            var old = obj[nodeName];
-            obj[nodeName] = [];
-            obj[nodeName].push(old);
-          }
-          obj[nodeName].push(xmlToJson(item));
-        }
-    }
-    }
-    return obj;
-  }
+    // console.log(lyrics);
 
-  $.ajax(settings).done(function (response) {
-    console.log(xmlToJson(response));
-    $('#lyrics-text').text(xmlToJson(response).GetLyricResult.Lyric)
+    // Second api call for lyrics from only hasLyrics songs
+    var lyricQueryURL = lyrics[0].api_lyrics
+    $.ajax({
+      url: lyricQueryURL + apiKey,
+      method: "GET"
+    }).then(function(response){
+      console.log(response.result);
+      // Make tags and fill with artist and track text before lyrics
+      var artistTag = $('<h4>').text(response.result.artist);
+      var trackTag = $('<h5>').text(response.result.track);
+      $('#lyrics-text').append(artistTag, trackTag);
+
+      // Split lyrics into an array to format correctly at ↵
+      var lyricArray = response.result.lyrics.split('\n');
+      console.log(response.result.lyrics.split('\n'));
+
+      // Loop through lyric array and create new ptag for each line
+      for (var i = 0; i < lyricArray.length; i++){
+        var newPtag = $('<p>').text(lyricArray[i]); 
+        $('#lyrics-text').append(newPtag);
+      }
+    });
+  }).catch(function(error){
+    console.error(error);
+  });
 });
+
+
+
