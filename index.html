@@ -15,7 +15,7 @@
     <header class="subnav-hero-section">
         <h1 class="subnav-hero-headline">Lyric<small>Lysteners</small></h1>
         <ul class="subnav-hero-subnav">
-            <li><a href="previousSearch.html">Previous Forgotten Lyrics..</a></li>
+            <li><a href="history.html">Previous Forgotten Lyrics..</a></li>
             <li><a href="#" class="is-active">What's that one part?</a></li>
             <li><a target="_blank" href="https://zurb.com/responsive">Share With Friends!</a></li>
         </ul>
@@ -30,7 +30,7 @@
                 <div class="input-group">
                     <input class="input-group-field" type="text" placeholder="Artist & Song Name Here">
                     <div class="input-group-button">
-                        <input type="search" class="button" value="search">
+                        <input type="submit" class="button" value="Search">
                     </div>
                 </div>
             </form>
@@ -46,13 +46,12 @@
             <h3 class="article-title">Lyrics</h3>
           </a>
           <p class="article-desc">
-              <div class="lyrics">
-            <p id="lyrics-text"></p>
-        </div>
-        </p>
-        </div>
+              <div id="lyrics-text" class="lyrics">
+                  <!-- ptags go here -->
+              </div>
+        
         <div class="card-divider flex-container align-middle">
-          <img id="qr-img" alt="test"> 
+          <img id="qr-img" alt="test">
           <a href="" class="artist"> Scan, or click, to jump to YouTube</a>
         </div>
         <div class="hover-border">
@@ -65,6 +64,4 @@
     <!-- Personal jQuery -->
     <script src="./assets/script.js"></script>
 </body>
-
 </html>
-<!--random comment-->
