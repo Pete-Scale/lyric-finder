@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Project 1</title>
 </head>
+
 <body>
     <header class="subnav-hero-section">
         <h1 class="subnav-hero-headline">Lyric<small>Lysteners</small></h1>
@@ -19,49 +21,51 @@
         </ul>
     </header>
 
+    <!-- <form action=""> -->
     <section class="lyric-search">
         <div class="lyric-search-inner">
-            <p class="subheader">Not to worry we got you covered. Check out all the songs you've searched for below</p>
+            <h4 class="subheader">Not to worry we got you covered. Check out all the songs you've searched for below
+            </h4>
         </div>
-        
-        <div class="input-group">
-            <input class="input-group-field" type="text" placeholder="Artist & Song Name Here">
-            <div class="input-group-button">
-                <input type="submit" class="button" value="Search">
+
+        <form action="">
+            <div class="input-group mysearch">
+                <input class="input-group-field" type="text" placeholder="Artist & Song Name Here">
+                <div class="input-group-button">
+                    <input type="submit" class="button" value="Search">
+                </div>
             </div>
-        </div>
+        </form>
 
         <div class="container">
-            <!-- <form action=""> -->
-                <div class="input-group">
-                    <input class="input-group-field" type="email"
-                        placeholder="Song 1">
-                </div>
-                <!-- <form action=""> -->
-                    <div class="input-group">
-                        <input class="input-group-field" type="email"
-                            placeholder="Song 2">
-                    </div>
+            <div id="song1" class="input-group">
+                <!-- title response will be appended on here -->
+                <!-- $('#Song1').appen(<h4>Song1</h4>) -->
+                <h4>Song1</h4>
+                <!-- <input class="input-group-field" type="email"
+                        placeholder="Song 1"> -->
+            </div>
 
-            <!-- <form action=""> -->
-            <!-- </form> -->
+            <div id="Song2" class="input-group">
+                <!-- title response will be appended on here -->
+                <!-- $('#Song2').appen(<h4>Song1</h4>) -->
+                <h4>Song2</h4>
+
+                <!-- <input class="input-group-field" type="email"
+                            placeholder="Song 2"> -->
+            </div>
         </div>
     </section>
-<!-- <div>
+    <!-- <div>
+    <p id="lyrics-text"></p>
     <img id="qr-img" alt="test" width="100 align-item:center;">
-
-    <p id="lyrics-text"></p> -->
-</div>
-
+    </div>
+    -->
     <!-- Compressed jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
     <!-- Personal jQuery -->
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
-
-
-
-
-

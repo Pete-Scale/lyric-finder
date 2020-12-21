@@ -2,23 +2,24 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
 body {
-    /* background-color: rbg(196, 180, 203); */
     margin: 20px;
     padding: 20px;
-    margin: 20px;
     background-color: #8c8c9d;
-    /* background-color: blue; */
-
-    
+    /* background-color:#E4EBE8; */
+    background:url('./m1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;   
 }
+
 /* CSS Styling for header & Nav Tabs */
 .subnav-hero-section {
     text-align: center;
     background: #1779BA;
     background-size: cover;
-    width: 80%;
-    margin-left: 20px;
+    width: 90%;
+    margin: 0 auto ;
     padding-top: 20px;
     position: relative;
     overflow: visible;
@@ -33,9 +34,11 @@ body {
             justify-content: center;
     height: 300px;
   }
+
   .subnav-hero-section .subnav-hero-headline {
     color: #FEFEFE;
   }
+
   .subnav-hero-subnav {
     float: none;
     position: absolute;
@@ -44,10 +47,12 @@ body {
     bottom: 0;
     width: 100%;
   }
+
   .subnav-hero-subnav li {
     float: none;
     display: inline-block;
   }
+
   .subnav-hero-subnav li a {
     padding: 0.9rem 1rem;
     font-size: 0.75rem;
@@ -58,24 +63,51 @@ body {
     letter-spacing: 1px;
     transition: all 0.35s ease-in-out;
   }
+
   .subnav-hero-subnav li a.is-active {
     background: rgba(254, 254, 254, 0.15);
   }
+
   .subnav-hero-subnav li a:hover {
     background: rgba(254, 254, 254, 0.15);
   }
+
   .container {
     background-color: rgb(185, 185, 218);
+    border-radius: 20px;
+    border: 2px gray solid;
+    padding: 20px;
     align-items: center;
-    width: 80%;
+    width: 90%;
     margin-left:20px;
     padding-top:20px ;
   }
-  .input-group {
-    width: 80%;
+
+  .lyric-search {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .mysearch, .input-group {
+    width: 90%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 15px;
+    margin: 10 auto;
     margin-left:20px;
     background-color: #ffff;
+  }
 
+  .mysearch {
+    background-color: rgb(185, 185, 218);
+    border-bottom-right-radius: 10px;
+    border: 2px gray solid;
+    border-radius: 20px;
+  }
+
+  .subheader {
+    color: #000000;
+    font-weight: bold;
   }
 /* white_check_mark
 eyes
