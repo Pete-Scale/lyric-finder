@@ -1,30 +1,28 @@
-// QR Code API -----------------------------------------------------------------
-var qrQueryURL = 'http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100';
-
-var qrImg = $('#qr-img');
-
-$.ajax({
-    url: qrQueryURL,
-    method: "GET"
-}).then(function(response) {
-    qrImg.attr('src', 'https://api.qrserver.com/v1/create-qr-code/?data=https://github.com/Pete-Scale&amp;size=100x100');
-});
-
-// Lyrics API ------------------------------------------------------------------
-var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi"
-
-var searchQueryURL = "https://api.happi.dev/v1/music" + apiKey + "&q="
-
 // When search button is clicked...
 $('#search-btn').on('click', function(event){
   event.preventDefault();
   // Empty lyric div container
   $('#lyrics-text').empty();
-
-  // Initial call needs artist and song title
-  var searchInput = $('#search-input').val()
+  
+  // Initial lyric call and QR Code API needs artist and song title 
+  var searchInput = $('#search-input').val();
   // console.log(searchQueryURL + searchInput);
+  console.log(searchInput);
 
+  // QR Code API -----------------------------------------------------------------
+  var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
+
+  var qrImg = $('#qr-img');
+
+  var youTubeSearch = 'https://www.youtube.com/results?search_query=';
+
+  qrImg.attr('src', qrURL + youTubeSearch + searchInput);
+
+  // Lyrics API ------------------------------------------------------------------
+  var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi";
+
+  var searchQueryURL = "https://api.happi.dev/v1/music" + apiKey + "&q=";
+  
   // First call
   $.ajax({
     url: searchQueryURL + searchInput,
@@ -32,7 +30,7 @@ $('#search-btn').on('click', function(event){
   }).then(function(response){
     // Returns only songs that hasLyrics
     var lyrics = response.result.filter(function(song){
-      return song.haslyrics 
+      return song.haslyrics
     });
     // console.log(lyrics);
 
@@ -42,25 +40,26 @@ $('#search-btn').on('click', function(event){
       url: lyricQueryURL + apiKey,
       method: "GET"
     }).then(function(response){
-      // console.log(response)
       console.log(response.result);
-      var artist = $('<h4>').text(response.result.artist)
-      var track = $('<h5>').text(response.result.track)
-      $('#lyrics-text').append(artist, track)
+      // Make tags and fill with artist and track text before lyrics
+      var artistTag = $('<h4>').text(response.result.artist);
+      var trackTag = $('<h5>').text(response.result.track);
+      $('#lyrics-text').append(artistTag, trackTag);
+
       // Split lyrics into an array to format correctly at ↵
       var lyricArray = response.result.lyrics.split('\n');
-  
       console.log(response.result.lyrics.split('\n'));
+
       // Loop through lyric array and create new ptag for each line
       for (var i = 0; i < lyricArray.length; i++){
-        var newPtag = $('<p>').text(lyricArray[i]) 
+        var newPtag = $('<p>').text(lyricArray[i]); 
         $('#lyrics-text').append(newPtag);
       }
     });
   }).catch(function(error){
-    console.error(error)
+    console.error(error);
   });
-})
+});
 
 
 
