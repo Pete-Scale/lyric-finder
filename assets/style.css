@@ -72,6 +72,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0 1rem;
+  
 }
 
 .lyric-search .input-group-field {
@@ -88,6 +89,7 @@
 
 .lyric-search .lyric-search-inner {
   text-align: center;
+  
 }
 
 .lyric-search .input-group-button .button {
@@ -100,13 +102,13 @@
 }
 
 @media print, screen and (min-width: 40em) {
-  .newsletter-subscribe {
+  .lyric-search {
     padding: 0 3rem;
   }
 }
 
 @media print, screen and (min-width: 64em) {
-  .newsletter-subscribe {
+  .lyric-search{
     padding: 0 6rem;
   }
 }
