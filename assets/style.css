@@ -58,6 +58,7 @@
   .subnav-hero-subnav li a:hover {
     background: rgba(254, 254, 254, 0.15);
   }
+  /* Personal styling for Lyrics  */
   
   /* Foundation css for search lyrics */
 
@@ -135,13 +136,15 @@ form{
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.85rem;
+  text-align: center;
 }
 
 .card-article-hover .card-section .article-title {
   font-weight: bold;
   font-family: ‘Georgia’, serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: #000;
+  text-align: center;
 }
 
 .card-article-hover .card-section .article-desc {
@@ -157,6 +160,7 @@ form{
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #2daebf;
+  text-align: center;
 }
 
 .card-article-hover .hover-border {
@@ -169,7 +173,7 @@ form{
 
 .card-article-hover:hover .hover-border {
   height: 10px;
-  width: 450px;
+  width: auto;
   transition: width 1s ease;
 }
 
@@ -210,4 +214,5 @@ body{
   .align-middle{
       display: block;
       margin: 0 auto;
+      text-align: center;
   }
