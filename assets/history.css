@@ -4,13 +4,12 @@
 }
 
 body {
-    margin: 20px;
-    padding: 20px;
     background-color: #8c8c9d;
-    /* background-color:#E4EBE8; */
     background:url('./m1.jpg') no-repeat center center fixed;
     background-size: cover;
-    min-height: 100vh;   
+    min-height: 100vh;  
+    /* margin: 20px;
+    padding: 20px; */
 }
 
 /* CSS Styling for header & Nav Tabs */
@@ -18,7 +17,7 @@ body {
     text-align: center;
     background: #1779BA;
     background-size: cover;
-    width: 90%;
+    width: 100%;
     margin: 0 auto ;
     padding-top: 20px;
     position: relative;
@@ -82,12 +81,6 @@ body {
     margin-left:20px;
     padding-top:20px ;
   }
-/* .animate {
-  width: 70px;
-  height: 50px;
-  position:absolute;
-  background: lightblue;
-} */
 
   .lyric-search {
     width: 90%;
@@ -105,6 +98,7 @@ body {
     margin-left:20px;
     background-color: #ffff;
   }
+
   .mysearch {
     background-color: rgb(185, 185, 218);
     border-bottom-right-radius: 10px;
@@ -113,14 +107,17 @@ body {
   }
 
   .subheader {
-    background-color: #E4EBE8;
-    color: #000000;
+    background-color:#1779BA;
+    color: white;
     font-weight: bold;
     padding: 15px;
+    text-align: center;
   }
-/* white_check_mark
-eyes
-raised_hands
-React
-Reply
- */
+  @media screen and (max-width: 375px) {
+    .subnav-hero-section {
+      width: 40%;
+      margin: 10px;
+      position: relative 10px;;
+      padding: 0 auto;
+    }
+  }
