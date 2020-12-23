@@ -209,7 +209,7 @@ form{
   margin: 0 1rem;
 }
 
-#scan-instructions {
+.qr-scan-instructions {
   font-style: italic;
   color: #888888;
 }
@@ -232,7 +232,7 @@ body{
 }
   
   /* qr code */
-  #qr-img {
+  .qr-img {
       max-width: 150px;
       max-height: 150px;
       padding-right: 20px;

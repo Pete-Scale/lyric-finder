@@ -1,10 +1,14 @@
-var qrImg = $('#qr-img');
-var youTubeLink = $('#you-tube-link');
+var qrImg = $('.qr-img');
+var youTubeLink = $('.you-tube-link');
+var qrScanInstructions = $('.qr-scan-instructions');
+var lyricH3 = $('#lyric-h3')
 
 // On page load hide these elements
 function init () {
-  qrImg.hide()
-  youTubeLink.hide()
+  qrImg.hide();
+  youTubeLink.hide();
+  qrScanInstructions.hide();
+  lyricH3.hide();
 }
 
 init();
@@ -26,6 +30,8 @@ $('#search-btn').on('click', function(event){
   // This API doesn't use an ajax call instead you use their api url in the <img> src
   qrImg.attr('src', qrURL + youTubeSearch + searchInput).show();
   youTubeLink.attr('href', youTubeSearch + searchInput).show();
+  qrScanInstructions.show();
+  lyricH3.show();
 
   // Lyrics API ------------------------------------------------------------------
   var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi";
@@ -59,8 +65,8 @@ $('#search-btn').on('click', function(event){
 
       // Loop through lyric array and create new ptag for each line
       for (var i = 0; i < lyricArray.length; i++){
-        var newPtag = $('<p>').text(lyricArray[i]); 
-        $('#lyrics-text').append(newPtag);
+        var lyricPtag = $('<p>').text(lyricArray[i]); 
+        $('#lyrics-text').append(lyricPtag);
       }
     });
   }).catch(function(error){
