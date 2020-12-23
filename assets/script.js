@@ -1,3 +1,14 @@
+var qrImg = $('#qr-img');
+var youTubeLink = $('#you-tube-link');
+
+// On page load hide these elements
+function init () {
+  qrImg.hide()
+  youTubeLink.hide()
+}
+
+init();
+
 // When search button is clicked...
 $('#search-btn').on('click', function(event){
   event.preventDefault();
@@ -12,17 +23,16 @@ $('#search-btn').on('click', function(event){
   // QR Code API -----------------------------------------------------------------
   var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
 
-  var qrImg = $('#qr-img');
-
   var youTubeSearch = 'https://www.youtube.com/results?search_query=';
 
-  qrImg.attr('src', qrURL + youTubeSearch + searchInput);
+  qrImg.attr('src', qrURL + youTubeSearch + searchInput).show();
+  youTubeLink.attr('href', youTubeSearch + searchInput).show();
 
   // Lyrics API ------------------------------------------------------------------
   var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi";
 
   var searchQueryURL = "https://api.happi.dev/v1/music" + apiKey + "&q=";
-  
+
   // First call
   $.ajax({
     url: searchQueryURL + searchInput,
