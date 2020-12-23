@@ -246,3 +246,14 @@ h4, h5, p{
 h5{
     padding-bottom: 20px;
 }
+
+/* Styling for the Share with friends page */
+.share-link{
+background: white;
+color: grey;
+padding: 30px;
+}
+
+.share-qr{
+    text-align: center;
+}
