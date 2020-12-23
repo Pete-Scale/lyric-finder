@@ -218,3 +218,15 @@ body{
       margin: 0 auto;
       text-align: center;
   }
+/* design for javascript lyric p tag */
+h4, h5, p{
+    text-align: center;
+}
+
+h4{
+    text-transform: lowercase;
+    text-transform: capitalize;
+}
+h5{
+    padding-bottom: 20px;
+}
