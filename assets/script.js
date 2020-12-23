@@ -24,7 +24,8 @@ $('#search-btn').on('click', function(event){
   var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
 
   var youTubeSearch = 'https://www.youtube.com/results?search_query=';
-
+  
+  // This API doesn't use an ajax call instead you use their api url in the <img> src
   qrImg.attr('src', qrURL + youTubeSearch + searchInput).show();
   youTubeLink.attr('href', youTubeSearch + searchInput).show();
 
