@@ -209,6 +209,11 @@ form{
   margin: 0 1rem;
 }
 
+#scan-instructions {
+  font-style: italic;
+  color: #888888;
+}
+
 .card-article-hover .meta-data {
   text-transform: uppercase;
 }

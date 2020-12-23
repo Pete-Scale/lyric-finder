@@ -17,14 +17,13 @@ $('#search-btn').on('click', function(event){
   
   // Initial lyric call and QR Code API needs artist and song title 
   var searchInput = $('#search-input').val();
-  // console.log(searchQueryURL + searchInput);
-  console.log(searchInput);
 
   // QR Code API -----------------------------------------------------------------
   var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
 
   var youTubeSearch = 'https://www.youtube.com/results?search_query=';
 
+  // This API doesn't use an ajax call instead you use their api url in the <img> src
   qrImg.attr('src', qrURL + youTubeSearch + searchInput).show();
   youTubeLink.attr('href', youTubeSearch + searchInput).show();
 
@@ -42,7 +41,6 @@ $('#search-btn').on('click', function(event){
     var lyrics = response.result.filter(function(song){
       return song.haslyrics
     });
-    // console.log(lyrics);
 
     // Second api call for lyrics from only hasLyrics songs
     var lyricQueryURL = lyrics[0].api_lyrics
@@ -58,7 +56,6 @@ $('#search-btn').on('click', function(event){
 
       // Split lyrics into an array to format correctly at ↵
       var lyricArray = response.result.lyrics.split('\n');
-      console.log(response.result.lyrics.split('\n'));
 
       // Loop through lyric array and create new ptag for each line
       for (var i = 0; i < lyricArray.length; i++){
@@ -70,6 +67,3 @@ $('#search-btn').on('click', function(event){
     console.error(error);
   });
 });
-
-
-
