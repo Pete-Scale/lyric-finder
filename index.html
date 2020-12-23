@@ -47,24 +47,34 @@
           <img class="img-design" src="https://unsplash.it/600/400">
         </a>
         <div class="card-section">
-          <p class="meta-data article-subtext"> Click or Scan QR Code | navigate to YouTube </p>
-          <a href="">
-            <h3 class="article-title">Lyrics</h3>
-          </a>
-          <p class="article-desc">
-              <div id="lyrics-text" class="lyrics">
-                  <!-- ptags go here -->
-              </div>
-        
-        <div class="card-divider flex-container align-middle">
-            <!-- <button> -->
-            <a id="you-tube-link" target="_blank">
-                <img id="qr-img" alt="QR Code">
-            </a>
-            <!-- </button> -->
-            <br>
-            <p id="scan-instructions">Scan or click the QR code to jump to the YouTube music video</p>
-        </div>
+            <div id="lyrics-container">
+                <div class="card-divider flex-container align-middle">
+                    <p class="meta-data article-subtext qr-scan-instructions"> Click or Scan QR Code | navigate to music video </p>
+                    <!-- <button> -->
+                    <a class="you-tube-link" target="_blank">
+                        <img class="qr-img" alt="QR Code">
+                    </a>
+                    <!-- </button> -->
+                </div>
+                <a href="">
+                    <h3 id="lyric-h3" class="article-title">Lyrics</h3>
+                </a>
+                <p class="article-desc">
+                    <div id="lyrics-text" class="lyrics">
+                    <!-- ptags go here -->
+                    </div>
+            
+                <div class="card-divider flex-container align-middle">
+                    <!-- <button> -->
+                    <a class="you-tube-link" target="_blank">
+                        <img class="qr-img" alt="QR Code">
+                    </a>
+                    <!-- </button> -->
+                    <br><br>
+                    <p class="meta-data article-subtext qr-scan-instructions"> Click or Scan QR Code | navigate to music video </p>
+                </div>
+            </div>
+        <div id="error-message" class="card-divider flex-container align-middle"></div>
         <div class="hover-border">
         </div>
 
