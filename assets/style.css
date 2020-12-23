@@ -88,18 +88,18 @@
           transform: translateX(0.5rem);
 }
 
-.subheader {
+/* .subheader {
   background-color:#1779BA;
   color: white;
   font-weight: bold;
   padding: 20px;
   font-size: 20px;
-}
+} */
 .card-section {
   color: #000000;
-  font-weight: bold;
+  /* font-weight: bold; */
   padding: 20px;
-  font-size: 30px;
+  font-size: 22px;
 }
 
 .lyric-search .input-group {
@@ -257,11 +257,13 @@ h4, h5, p{
 h4, p{
     font-family: 'Lateef';
 }
- h5{
+
+h5{
     font-weight: bold;
     padding-bottom: 20px;
     font-family: 'Lateef', cursive;
     text-decoration: underline;
+    font-size: 26px;
     letter-spacing: 3px;
 }
 
