@@ -83,11 +83,3 @@ $('#search-btn').on('click', function(event){
     console.error(error);
   });
 });
-
-// function errorText (){
-//   if ( !$.trim( lyricsText.text() ).length ) {
-//     lyricsContainer.hide();
-//     errorMessage.show();
-//     errorMessage.text("Oh no! We couldn't find your lyrics. Are you sure you spelled everything correctly?")
-//   }
-// }
