@@ -82,6 +82,18 @@
       -ms-transform: translateX(0.5rem);
           transform: translateX(0.5rem);
 }
+/* .subheader {
+  color: #000000;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 20px;
+}
+.card-section {
+  color: #000000;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 30px;
+} */
 
 .lyric-search .input-group {
   margin-bottom: 0;
