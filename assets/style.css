@@ -80,8 +80,10 @@
       -ms-transform: translateX(0.5rem);
           transform: translateX(0.5rem);
 }
-/* .subheader {
-  color: #000000;
+
+.subheader {
+  background-color:#1779BA;
+  color: white;
   font-weight: bold;
   padding: 20px;
   font-size: 20px;
@@ -91,7 +93,7 @@
   font-weight: bold;
   padding: 20px;
   font-size: 30px;
-} */
+}
 
 .lyric-search .input-group {
   margin-bottom: 0;
