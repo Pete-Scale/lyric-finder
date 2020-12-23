@@ -58,7 +58,12 @@
   .subnav-hero-subnav li a:hover {
     background: rgba(254, 254, 254, 0.15);
   }
-  /* Personal styling for Lyrics  */
+  /*subheader styling */
+  .subheader{
+      color: grey;
+      font-size: 20px;
+      letter-spacing: 2px;
+  }
   
   /* Foundation css for search lyrics */
 
@@ -103,6 +108,8 @@
 
 .lyric-search .lyric-search-inner {
   text-align: center;
+  display: block;
+  margin: 0 auto;
   
 }
 
@@ -112,7 +119,7 @@
   -webkit-transform: translateX(-0.5rem);
       -ms-transform: translateX(-0.5rem);
           transform: translateX(-0.5rem);
-  min-width: 25vw;
+  min-width: 2vw;
 }
 
 @media print, screen and (min-width: 40em) {
@@ -235,18 +242,22 @@ body{
 /* button style */ 
   #search-btn{
     outline: none;
+
   }
 /* design for javascript lyric p tag */
 h4, h5, p{
     text-align: center;
 }
 
-/* h4{
-    text-transform: lowercase;
-    text-transform: capitalize;
-} */
-h5{
+h4, p{
+    font-family: 'Lateef';
+}
+ h5{
+    font-weight: bold;
     padding-bottom: 20px;
+    font-family: 'Lateef', cursive;
+    text-decoration: underline;
+    letter-spacing: 3px;
 }
 
 /* Styling for the Share with friends page */
