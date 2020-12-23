@@ -1,14 +1,18 @@
 var qrImg = $('.qr-img');
 var youTubeLink = $('.you-tube-link');
 var qrScanInstructions = $('.qr-scan-instructions');
-var lyricH3 = $('#lyric-h3')
+var lyricsContainer = $('#lyrics-container');
+var lyricsText = $('#lyrics-text');
+var errorMessage = $('#error-message');
+// var lyricH3 = $('#lyric-h3')
 
 // On page load hide these elements
 function init () {
   qrImg.hide();
   youTubeLink.hide();
   qrScanInstructions.hide();
-  lyricH3.hide();
+  errorMessage.hide();
+  // lyricH3.hide();
 }
 
 init();
@@ -16,8 +20,10 @@ init();
 // When search button is clicked...
 $('#search-btn').on('click', function(event){
   event.preventDefault();
+  lyricsContainer.show();
+  errorMessage.hide();
   // Empty lyric div container
-  $('#lyrics-text').empty();
+  lyricsText.empty();
   
   // Initial lyric call and QR Code API needs artist and song title 
   var searchInput = $('#search-input').val();
@@ -31,7 +37,7 @@ $('#search-btn').on('click', function(event){
   qrImg.attr('src', qrURL + youTubeSearch + searchInput).show();
   youTubeLink.attr('href', youTubeSearch + searchInput).show();
   qrScanInstructions.show();
-  lyricH3.show();
+  // lyricH3.show();
 
   // Lyrics API ------------------------------------------------------------------
   var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi";
@@ -41,7 +47,7 @@ $('#search-btn').on('click', function(event){
   // First call
   $.ajax({
     url: searchQueryURL + searchInput,
-    method: "GET"
+    method: "GET",
   }).then(function(response){
     // Returns only songs that hasLyrics
     var lyrics = response.result.filter(function(song){
@@ -58,7 +64,7 @@ $('#search-btn').on('click', function(event){
       // Make tags and fill with artist and track text before lyrics
       var artistTag = $('<h4>').text(response.result.artist);
       var trackTag = $('<h5>').text(response.result.track);
-      $('#lyrics-text').append(artistTag, trackTag);
+      lyricsText.append(artistTag, trackTag);
 
       // Split lyrics into an array to format correctly at ↵
       var lyricArray = response.result.lyrics.split('\n');
@@ -66,10 +72,22 @@ $('#search-btn').on('click', function(event){
       // Loop through lyric array and create new ptag for each line
       for (var i = 0; i < lyricArray.length; i++){
         var lyricPtag = $('<p>').text(lyricArray[i]); 
-        $('#lyrics-text').append(lyricPtag);
+        lyricsText.append(lyricPtag);
       }
     });
+  }).fail(function(){
+    lyricsContainer.hide();
+    errorMessage.show();
+    errorMessage.text("Oh no! We couldn't find your lyrics. Are you sure you spelled everything correctly?")
   }).catch(function(error){
     console.error(error);
   });
 });
+
+// function errorText (){
+//   if ( !$.trim( lyricsText.text() ).length ) {
+//     lyricsContainer.hide();
+//     errorMessage.show();
+//     errorMessage.text("Oh no! We couldn't find your lyrics. Are you sure you spelled everything correctly?")
+//   }
+// }
