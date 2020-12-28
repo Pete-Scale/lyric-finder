@@ -4,15 +4,16 @@ var qrScanInstructions = $('.qr-scan-instructions');
 var lyricsContainer = $('#lyrics-container');
 var lyricsText = $('#lyrics-text');
 var errorMessage = $('#error-message');
-// var lyricH3 = $('#lyric-h3')
+var mainContainer = $('#main-container');
+var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
 
 // On page load hide these elements
 function init () {
+  mainContainer.hide()
   qrImg.hide();
   youTubeLink.hide();
   qrScanInstructions.hide();
   errorMessage.hide();
-  // lyricH3.hide();
 }
 
 init();
@@ -20,6 +21,7 @@ init();
 // When search button is clicked...
 $('#search-btn').on('click', function(event){
   event.preventDefault();
+  mainContainer.show();
   lyricsContainer.show();
   errorMessage.hide();
   // Empty lyric div container
@@ -29,8 +31,6 @@ $('#search-btn').on('click', function(event){
   var searchInput = $('#search-input').val();
 
   // QR Code API -----------------------------------------------------------------
-  var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
-
   var youTubeSearch = 'https://www.youtube.com/results?search_query=';
 
   // This API doesn't use an ajax call instead you use their api url in the <img> src
@@ -83,3 +83,6 @@ $('#search-btn').on('click', function(event){
     console.error(error);
   });
 });
+
+// Share With Friends! tab
+$('#our-site-qr-img').attr('src', qrURL + 'https://pete-scale.github.io/lyric-finder/index.html');

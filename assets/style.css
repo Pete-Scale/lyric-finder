@@ -88,13 +88,6 @@
           transform: translateX(0.5rem);
 }
 
-/* .subheader {
-  background-color:#1779BA;
-  color: white;
-  font-weight: bold;
-  padding: 20px;
-  font-size: 20px;
-} */
 .card-section {
   color: #000000;
   /* font-weight: bold; */
@@ -201,10 +194,6 @@ form{
 }
 
 .card-article-hover .artist {
-  color: navy;
-}
-
-.card-article-hover .artist {
   border-radius: 50%;
   margin: 0 1rem;
 }
@@ -212,6 +201,10 @@ form{
 .qr-scan-instructions {
   font-style: italic;
   color: #888888;
+}
+
+#top-scan-instructions{
+  margin-top: 2rem;
 }
 
 .card-article-hover .meta-data {
@@ -285,4 +278,9 @@ padding: 30px;
     text-align: center;
 }
 
-/* animation styles */
+.share-instructions {
+  padding-top: 1rem;
+  text-transform: uppercase;
+  font-family: 'Lateef';
+  font-style: italic;
+}
