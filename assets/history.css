@@ -5,7 +5,7 @@
 
 body {
     background-color: #8c8c9d;
-    background:url('./m1.jpg') no-repeat center center fixed;
+    background:url('./city.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;  
     /* margin: 20px;
@@ -72,7 +72,7 @@ body {
   }
 
   .container {
-    background-color: rgb(185, 185, 218);
+    background-color: #1779BA;
     border-radius: 20px;
     border: 2px gray solid;
     padding: 20px;
@@ -100,7 +100,7 @@ body {
   }
 
   .mysearch {
-    background-color: rgb(185, 185, 218);
+    background-color: #1779BA;
     border-bottom-right-radius: 10px;
     border: 2px gray solid;
     border-radius: 20px;
@@ -109,10 +109,15 @@ body {
   .subheader {
     background-color:#1779BA;
     color: white;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding: 15px;
     text-align: center;
+    font-size: 18px;
   }
+
+  /* #song1{
+    font-size: 18px;
+  } */
   @media screen and (max-width: 375px) {
     .subnav-hero-section {
       width: 40%;
