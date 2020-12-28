@@ -7,12 +7,9 @@ var errorMessage = $('#error-message');
 var mainContainer = $('#main-container');
 var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
 
-// On page load hide these elements
+// On page load hide these divs
 function init () {
-  mainContainer.hide()
-  qrImg.hide();
-  youTubeLink.hide();
-  qrScanInstructions.hide();
+  mainContainer.hide();
   errorMessage.hide();
 }
 
@@ -20,24 +17,27 @@ init();
 
 // When search button is clicked...
 $('#search-btn').on('click', function(event){
+  // Don't refresh page
   event.preventDefault();
+
+  // Empty lyric div container
+  lyricsText.empty();
+
   mainContainer.show();
   lyricsContainer.show();
   errorMessage.hide();
-  // Empty lyric div container
-  lyricsText.empty();
-  
-  // Initial lyric call and QR Code API needs artist and song title 
+
+  // Initial Lyric API call and QR Code API needs artist and song title 
   var searchInput = $('#search-input').val();
 
   // QR Code API -----------------------------------------------------------------
   var youTubeSearch = 'https://www.youtube.com/results?search_query=';
 
   // This API doesn't use an ajax call instead you use their api url in the <img> src
-  qrImg.attr('src', qrURL + youTubeSearch + searchInput).show();
-  youTubeLink.attr('href', youTubeSearch + searchInput).show();
-  qrScanInstructions.show();
-  // lyricH3.show();
+  qrImg.attr('src', qrURL + youTubeSearch + searchInput);
+  youTubeLink.attr('href', youTubeSearch + searchInput);
+  // Resets to normal the style from huge margin to hide html on page refresh
+  qrScanInstructions.css('margin-top', '2rem');
 
   // Lyrics API ------------------------------------------------------------------
   var apiKey = "?apikey=f032e5LnKKIgW5iz3LxRnpzdRdC6b9J7YfJlOKVdGJI5QupsGzTDgGxi";
@@ -79,8 +79,6 @@ $('#search-btn').on('click', function(event){
     lyricsContainer.hide();
     errorMessage.show();
     errorMessage.text("Oh no! We couldn't find your lyrics. Are you sure you spelled everything correctly?")
-  }).catch(function(error){
-    console.error(error);
   });
 });
 

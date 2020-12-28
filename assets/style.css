@@ -201,10 +201,7 @@ form{
 .qr-scan-instructions {
   font-style: italic;
   color: #888888;
-}
-
-#top-scan-instructions{
-  margin-top: 2rem;
+  margin-top: 1000px;
 }
 
 .card-article-hover .meta-data {
@@ -261,6 +258,7 @@ h5{
 }
 
 #error-message {
+  margin-top: 3rem;
   font-size: 50px;
   font-style: italic;
   color: white;
