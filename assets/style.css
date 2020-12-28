@@ -209,7 +209,7 @@ form{
   margin: 0 1rem;
 }
 
-#scan-instructions {
+.qr-scan-instructions {
   font-style: italic;
   color: #888888;
 }
@@ -231,30 +231,30 @@ body{
     margin: 0 auto;
 }
   
-  /* qr code */
-  #qr-img {
-      max-width: 150px;
-      max-height: 150px;
-      padding-right: 20px;
-      margin-left: 20px;
-  }
+/* qr code */
+.qr-img {
+    max-width: 150px;
+    max-height: 150px;
+    padding-right: 20px;
+    margin-left: 20px;
+}
 
-  .align-middle{
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-  }
+.align-middle{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
 /* button style */ 
-  #search-btn{
-    outline: none;
+#search-btn{
+  outline: none;
 
-  }
+}
 /* design for javascript lyric p tag */
 h4, h5, p{
     text-align: center;
 }
 
-h4, p{
+h4, p, #error-message{
     font-family: 'Lateef';
 }
 
@@ -265,6 +265,13 @@ h5{
     text-decoration: underline;
     font-size: 26px;
     letter-spacing: 3px;
+}
+
+#error-message {
+  font-size: 50px;
+  font-style: italic;
+  color: white;
+  background: #1779ba;
 }
 
 /* Styling for the Share with friends page */
