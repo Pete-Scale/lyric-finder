@@ -8,8 +8,6 @@ body {
     background:url('./city.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;  
-    /* margin: 20px;
-    padding: 20px; */
 }
 
 /* CSS Styling for header & Nav Tabs */
@@ -119,15 +117,19 @@ body {
     text-align: center;
     font-size: 18px;
   }
-
-  /* #song1{
-    font-size: 18px;
-  } */
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 252px) {
     .subnav-hero-section {
-      width: 40%;
-      margin: 10px;
-      position: relative 10px;;
       padding: 0 auto;
+      line-height: 1.4;
+      margin-top: 0;
+      margin-bottom: .2rem;
+      display: block;
+    }
+    .h1 {
+      display: block-size;
+    }
+    .subnav-hero-headline {
+      font-size: 40px;
     }
   }
+ 
