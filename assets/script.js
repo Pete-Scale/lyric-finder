@@ -5,7 +5,12 @@ var lyricsContainer = $('#lyrics-container');
 var lyricsText = $('#lyrics-text');
 var errorMessage = $('#error-message');
 var mainContainer = $('#main-container');
+var historyContainer = $('#history-container');
 var qrURL = 'http://api.qrserver.com/v1/create-qr-code/?data=';
+
+var song1 = localStorage.getItem('song1');
+
+console.log(song1);
 
 // On page load hide these divs
 function init () {
@@ -29,6 +34,10 @@ $('#search-btn').on('click', function(event){
 
   // Initial Lyric API call and QR Code API needs artist and song title 
   var searchInput = $('#search-input').val();
+
+  localStorage.setItem('song1', searchInput);
+
+  console.log(searchInput);
 
   // QR Code API -----------------------------------------------------------------
   var youTubeSearch = 'https://www.youtube.com/results?search_query=';
@@ -79,8 +88,11 @@ $('#search-btn').on('click', function(event){
     lyricsContainer.hide();
     errorMessage.show();
     errorMessage.text("Oh no! We couldn't find your lyrics. Are you sure you spelled everything correctly?")
-  });
+  }); 
 });
 
 // Share With Friends! tab
 $('#our-site-qr-img').attr('src', qrURL + 'https://pete-scale.github.io/lyric-finder/index.html');
+
+// Previous Forgotten Lyrics tab
+$('#song-1').text(song1)
