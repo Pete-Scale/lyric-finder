@@ -2,6 +2,12 @@
 
 ![LyricLysteners Image](./assets/images/lyric-lysteners.png)
 
+<br>
+
+---
+
+<br>
+
 Collaborative coding project with the goal to combine two third party API's and implement them using HTML, CSS, jQuery, and Foundation. 
 
 <br>
