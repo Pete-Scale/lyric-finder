@@ -1,72 +1,73 @@
 /* Sets everything to border-box */
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* Foundation CSS Styling for header & Nav Tabs */
 .subnav-hero-section {
-    text-align: center;
-    background: #1779ba;
-    background-size: cover;
-    position: relative;
-    overflow: visible;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    height: 300px;
-  }
-  
-  .subnav-hero-section .subnav-hero-headline {
-    color: #fefefe;
-  }
-  
-  .subnav-hero-subnav {
-    float: none;
-    position: absolute;
-    text-align: center;
-    margin: 0 auto;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .subnav-hero-subnav li {
-    float: none;
-    display: inline-block;
-  }
-  
-  .subnav-hero-subnav li a {
-    padding: 0.9rem 1rem;
-    font-size: 0.75rem;
-    color: #fefefe;
-    text-transform: uppercase;
-    display: block;
-    font-weight: bold;
-    letter-spacing: 1px;
-    /* transition: all 0.35s ease-in-out; */
-  }
-  
-  .subnav-hero-subnav li a.is-active {
-    background: rgba(254, 254, 254, 0.15);
-  }
-  
-  .subnav-hero-subnav li a:hover {
-    background: rgba(254, 254, 254, 0.15);
-  }
-  /*subheader styling */
-  .subheader{
-      color: grey;
-      font-size: 20px;
-      letter-spacing: 2px;
-  }
-  
-  /* Foundation css for search lyrics */
+  text-align: center;
+  background: #1779ba;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 300px;
+}
 
+.subnav-hero-section .subnav-hero-headline {
+  color: #fefefe;
+}
+
+.subnav-hero-subnav {
+  float: none;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+}
+
+.subnav-hero-subnav li {
+  float: none;
+  display: inline-block;
+}
+
+.subnav-hero-subnav li a {
+  padding: 0.9rem 1rem;
+  font-size: 0.75rem;
+  color: #fefefe;
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.subnav-hero-subnav li a.is-active {
+  background: rgba(254, 254, 254, 0.15);
+}
+
+.subnav-hero-subnav li a:hover {
+  background: rgba(254, 254, 254, 0.15);
+}
+
+/*subheader styling */
+.subheader {
+  color: grey;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/* Foundation css for search lyrics */
 .lyric-search {
   background: #fefefe;
   height: 200px;
@@ -74,23 +75,22 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0 1rem;
-  
+
 }
 
 .lyric-search .input-group-field {
   border-radius: 5000px 0 0 5000px;
   position: relative;
   -webkit-transform: translateX(0.5rem);
-      -ms-transform: translateX(0.5rem);
-          transform: translateX(0.5rem);
+  -ms-transform: translateX(0.5rem);
+  transform: translateX(0.5rem);
 }
 
 .card-section {
   color: #000000;
-  /* font-weight: bold; */
   padding: 20px;
   font-size: 22px;
 }
@@ -103,37 +103,38 @@
   text-align: center;
   display: block;
   margin: 0 auto;
-  
+
 }
 
 .lyric-search .input-group-button .button {
   border-radius: 5000px;
   position: relative;
   -webkit-transform: translateX(-0.5rem);
-      -ms-transform: translateX(-0.5rem);
-          transform: translateX(-0.5rem);
+  -ms-transform: translateX(-0.5rem);
+  transform: translateX(-0.5rem);
   min-width: 2vw;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
   .lyric-search {
     padding: 0 3rem;
   }
 }
 
-@media print, screen and (min-width: 64em) {
-  .lyric-search{
+@media print,
+screen and (min-width: 64em) {
+  .lyric-search {
     padding: 0 6rem;
   }
 }
-form{
-    padding-bottom: 20px;
-    justify-content: center;
+
+form {
+  padding-bottom: 20px;
+  justify-content: center;
 }
 
 /* Card for lyrics and QR code Foundation */
-
-
 .card-article-hover {
   box-shadow: 0px 0px 7px #888888;
 }
@@ -207,54 +208,61 @@ form{
 .card-article-hover .meta-data {
   text-transform: uppercase;
 }
+
 /* Custom CSS for body and cards */
-body{
-    background-color: #1779ba;
+body {
+  background-color: #1779ba;
 }
 
-.card-design{
-    background-color: #000;
+.card-design {
+  background-color: #000;
 }
 
-.img-design{
-    display: block;
-    margin: 0 auto;
+.img-design {
+  display: block;
+  margin: 0 auto;
 }
-  
+
 /* qr code */
 .qr-img {
-    max-width: 150px;
-    max-height: 150px;
-    padding-right: 20px;
-    margin-left: 20px;
+  max-width: 150px;
+  max-height: 150px;
+  padding-right: 20px;
+  margin-left: 20px;
 }
 
-.align-middle{
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+.align-middle {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
-/* button style */ 
-#search-btn{
+
+/* button style */
+#search-btn {
   outline: none;
 
 }
+
 /* design for javascript lyric p tag */
-h4, h5, p{
-    text-align: center;
+h4,
+h5,
+p {
+  text-align: center;
 }
 
-h4, p, #error-message{
-    font-family: 'Lateef';
+h4,
+p,
+#error-message {
+  font-family: 'Lateef';
 }
 
-h5{
-    font-weight: bold;
-    padding-bottom: 20px;
-    font-family: 'Lateef', cursive;
-    text-decoration: underline;
-    font-size: 26px;
-    letter-spacing: 3px;
+h5 {
+  font-weight: bold;
+  padding-bottom: 20px;
+  font-family: 'Lateef', cursive;
+  text-decoration: underline;
+  font-size: 26px;
+  letter-spacing: 3px;
 }
 
 #error-message {
@@ -266,14 +274,14 @@ h5{
 }
 
 /* Styling for the Share with friends page */
-.share-link{
-background: white;
-color: grey;
-padding: 30px;
+.share-link {
+  background: white;
+  color: grey;
+  padding: 30px;
 }
 
-.share-qr{
-    text-align: center;
+.share-qr {
+  text-align: center;
 }
 
 .share-instructions {
@@ -284,8 +292,8 @@ padding: 30px;
 }
 
 /* History CSS Timeline / Local Storage */
-
-.timeline .timeline-item::after, .timeline .timeline-item::before {
+.timeline .timeline-item::after,
+.timeline .timeline-item::before {
   clear: both;
   content: '';
   display: block;
@@ -397,22 +405,26 @@ padding: 30px;
     padding: 0;
     width: 90%;
   }
+
   .timeline::before {
     left: 0;
   }
+
   .timeline .timeline-item .timeline-content {
     float: right;
     text-align: left;
     width: 90%;
   }
-  .timeline .timeline-item .timeline-content::before, .timeline .timeline-item .timeline-content.right::before {
+
+  .timeline .timeline-item .timeline-content::before,
+  .timeline .timeline-item .timeline-content.right::before {
     border-left: 0;
     border-right: 7px solid #fefefe;
     left: 10%;
     margin-left: -6px;
   }
+
   .timeline .timeline-item .timeline-icon {
     left: 0;
   }
 }
-
