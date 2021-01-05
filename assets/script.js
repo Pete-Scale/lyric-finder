@@ -60,7 +60,6 @@ $('#search-btn').on('click', function(event){
       url: lyricQueryURL + apiKey,
       method: "GET"
     }).then(function(response){
-      console.log(response.result);
       // Make tags and fill with artist and track text before lyrics
       var artistTag = $('<h4>').text(response.result.artist);
       var trackTag = $('<h5>').text(response.result.track);
