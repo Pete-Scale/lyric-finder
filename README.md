@@ -8,7 +8,11 @@
 
 <br>
 
-Collaborative coding project with the goal to combine two third party API's and implement them using HTML, CSS, jQuery, and Foundation. 
+## Link
+
+https://pete-scale.github.io/lyric-finder/index.html
+
+This is a collaborative coding project to take two third party API's and combine them into something interesting using HTML, CSS, jQuery, and Foundation.
 
 <br>
 
@@ -91,7 +95,7 @@ Go to the "Previous Forgotten Lyrics" tab to get a history list of searches you'
 
 ## Usage
 
-* Make sure you are on the **"WHAT'S THAT ONE PART?" TAB** up at the top on the NAVBAR.
+* Make sure you are on the **"WHAT'S THAT ONE PART?" TAB** up at the top on the **NAVBAR**.
 
 * Type into the **SEARCH FIELD** both the artist name and song title you wish to find. 
     * Typing in both is recommended to yield best results.
@@ -113,7 +117,7 @@ Go to the "Previous Forgotten Lyrics" tab to get a history list of searches you'
 
 Like our app?
 
-* Click the **"SHARE WITH FRIENDS!" TAB** on the NAVBAR.
+* Click the **"SHARE WITH FRIENDS!" TAB** on the **NAVBAR**.
     * Find some friends.
     * Have them scan the **QR CODE** so they can enjoy this app too!
 
